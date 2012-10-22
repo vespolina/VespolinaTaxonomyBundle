@@ -7,7 +7,7 @@
  */
 namespace Vespolina\TaxonomyBundle\Document;
 
-use Vespolina\TaxonomyBundle\Model\Term as AbstractTerm;
+use Vespolina\Entity\Taxonomy\Term as AbstractTerm;
 /**
  * @author Daniel Kucharski <daniel@xerias.be>
  */
