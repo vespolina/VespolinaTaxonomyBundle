@@ -8,7 +8,7 @@
 namespace Vespolina\TaxonomyBundle\Document;
 
 use Vespolina\TaxonomyBundle\Document\Term;
-use Vespolina\TaxonomyBundle\Model\Taxonomy as AbstractTaxonomy;
+use Vespolina\Entity\Taxonomy\Taxonomy as AbstractTaxonomy;
 /**
  * @author Daniel Kucharski <daniel@xerias.be>
  */
@@ -16,5 +16,4 @@ use Vespolina\TaxonomyBundle\Model\Taxonomy as AbstractTaxonomy;
 class Taxonomy extends AbstractTaxonomy
 {
     protected $id;
-
 }
