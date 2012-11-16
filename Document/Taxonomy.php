@@ -16,4 +16,5 @@ use Vespolina\Entity\Taxonomy\Taxonomy as AbstractTaxonomy;
 class Taxonomy extends AbstractTaxonomy
 {
     protected $id;
+
 }

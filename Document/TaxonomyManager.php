@@ -10,9 +10,8 @@ namespace Vespolina\TaxonomyBundle\Document;
 use Doctrine\ODM\MongoDB\DocumentManager;
 use Symfony\Component\DependencyInjection\Container;
 
-use Vespolina\TaxonomyBundle\Document\NestedTaxonomy;
-use Vespolina\TaxonomyBundle\Document\TagTaxonomy;
-use Vespolina\TaxonomyBundle\Model\TaxonomyInterface;
+use Vespolina\Entity\Taxonomy\TaxonomyInterface;
+use Vespolina\Entity\Taxonomy\TermInterface;
 use Vespolina\TaxonomyBundle\Model\TaxonomyManager as BaseTaxonomyManager;
 /**
  * @author Daniel Kucharski <daniel@xerias.be>

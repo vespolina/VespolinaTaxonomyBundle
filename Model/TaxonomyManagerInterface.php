@@ -7,8 +7,9 @@
  */
 namespace Vespolina\TaxonomyBundle\Model;
 
-use Vespolina\TaxonomyBundle\Model\TaxonomyInterface;
-use Vespolina\TaxonomyBundle\Model\TaxonomyManagerInterface;
+use Vespolina\Entity\Taxonomy\TaxonomyInterface;
+use Vespolina\Entity\Taxonomy\TermInterface;
+
 /**
  * @author Richard Shank <develop@zestic.com>
  */
