@@ -9,10 +9,10 @@ namespace Vespolina\TaxonomyBundle\Document;
 
 use Doctrine\ODM\MongoDB\DocumentManager;
 use Symfony\Component\DependencyInjection\Container;
-
 use Vespolina\Entity\Taxonomy\TaxonomyInterface;
 use Vespolina\Entity\Taxonomy\TermInterface;
 use Vespolina\TaxonomyBundle\Model\TaxonomyManager as BaseTaxonomyManager;
+
 /**
  * @author Daniel Kucharski <daniel@xerias.be>
  * @author Richard Shank <develop@zestic.com>
@@ -24,15 +24,11 @@ class TaxonomyManager extends BaseTaxonomyManager
     
     public function __construct(DocumentManager $dm, $taxonomyClass, $termClass)
     {
-
         $this->dm = $dm;
         $this->taxonomyRepo = $this->dm->getRepository($taxonomyClass);
 
         parent::__construct($taxonomyClass, $termClass);
-
     }
-
-
 
     /**
      * @inheritdoc
@@ -47,7 +43,6 @@ class TaxonomyManager extends BaseTaxonomyManager
      */
     public function findTaxonomyById($id)
     {
-
         return $this->taxonomyRepo->find($id);
     }
 

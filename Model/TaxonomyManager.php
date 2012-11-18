@@ -9,8 +9,8 @@ namespace Vespolina\TaxonomyBundle\Model;
 
 use Symfony\Component\DependencyInjection\Container;
 
-use Vespolina\TaxonomyBundle\Model\TaxonomyInterface;
-use Vespolina\TaxonomyBundle\Model\TermInterface;
+use Vespolina\Entity\Taxonomy\TaxonomyInterface;
+use Vespolina\Entity\Taxonomy\TermInterface;
 use Vespolina\TaxonomyBundle\Model\TaxonomyManagerInterface;
 
 /**
@@ -21,8 +21,8 @@ abstract class TaxonomyManager implements TaxonomyManagerInterface
     protected $taxonomyClass;
     protected $termClass;
 
-    public function __construct($taxonomyClass, $termClass) {
-
+    public function __construct($taxonomyClass, $termClass)
+    {
         $this->taxonomyClass = $taxonomyClass;
         $this->termClass = $termClass;
     }
@@ -30,14 +30,11 @@ abstract class TaxonomyManager implements TaxonomyManagerInterface
 
     public function addTerm(TermInterface $term, TermInterface $parent = null)
     {
-
         if ($parent) {
-
 
             //TODO
 
         } else {
-
             $this->terms[$term->getPath()] = $term;
         }
     }
@@ -47,7 +44,6 @@ abstract class TaxonomyManager implements TaxonomyManagerInterface
      */
     public function createTaxonomy($name, $type)
     {
-
         if ($taxonomyClass = $this->taxonomyClass) {
 
             $taxonomy = new $taxonomyClass();
@@ -68,5 +64,4 @@ abstract class TaxonomyManager implements TaxonomyManagerInterface
             return $term;
         }
     }
-
 }

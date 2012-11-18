@@ -7,10 +7,10 @@
 
         <field name="name" fieldName="name" type="string" />
         <field name="path" fieldName="path" type="string" id="true"/>
-        <field name="properties" fieldName="properties" type="hash"/>
+        <field name="attributes" fieldName="attributes" type="hash"/>
 
-        <embed-many fieldName="terms"
-                    field="terms"
+        <embed-many fieldName="children"
+                    field="children"
                     targetDocument="Vespolina\TaxonomyBundle\Document\Term"
                     strategy="set"/>
     </embedded-document>

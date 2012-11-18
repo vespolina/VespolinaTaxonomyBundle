@@ -9,12 +9,10 @@ namespace Vespolina\TaxonomyBundle\Document;
 
 use Vespolina\TaxonomyBundle\Document\Term;
 use Vespolina\Entity\Taxonomy\Taxonomy as AbstractTaxonomy;
+
 /**
  * @author Daniel Kucharski <daniel@xerias.be>
  */
-
 class Taxonomy extends AbstractTaxonomy
 {
-    protected $id;
-
 }
