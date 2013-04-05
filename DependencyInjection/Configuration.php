@@ -50,16 +50,4 @@ class Configuration implements ConfigurationInterface
         ;
     }
 
-    private function addCartItemSection(ArrayNodeDefinition $node)
-    {
-        $node
-            ->children()
-                ->arrayNode('cart_item')
-                    ->children()
-                        ->scalarNode('class')->end()
-                    ->end()
-                ->end()
-            ->end()
-        ;
-    }
 }
