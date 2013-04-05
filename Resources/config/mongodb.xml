@@ -5,17 +5,21 @@
     xsi:schemaLocation="http://symfony.com/schema/dic/services http://symfony.com/schema/dic/services/services-1.0.xsd">
 
     <parameters>
-        <parameter key="vespolina.taxonomy.taxonomy_manager.class">Vespolina\TaxonomyBundle\Document\TaxonomyManager</parameter>
-        <parameter key="vespolina.taxonomy.model.taxonomy.class">Vespolina\TaxonomyBundle\Document\Taxonomy</parameter>
-        <parameter key="vespolina.taxonomy.model.term.class">Vespolina\TaxonomyBundle\Document\Term</parameter>
+        <parameter key="vespolina_taxonomy.entity.taxonomy_node.class">Vespolina\Entity\Taxonomy\TaxonomyNode</parameter>
+        <parameter key="vespolina_taxonomy.taxonomy_gateway.class">Vespolina\Taxonomy\Gateway\TaxonomyGateway</parameter>
+        <parameter key="vespolina_taxonomy.taxonomy_manager.class">Vespolina\Taxonomy\Manager\TaxonomyManager</parameter>
     </parameters>
 
     <services>
-        <service id="vespolina.taxonomy.taxonomy_manager" class="%vespolina.taxonomy.taxonomy_manager.class%">
-            <argument type="service" id="doctrine_mongodb.odm.default_document_manager" />
-            <argument>%vespolina.taxonomy.model.taxonomy.class%</argument>
-            <argument>%vespolina.taxonomy.model.term.class%</argument>
+        <service id="vespolina_taxonomy.taxonomy_gateway" class="%vespolina_taxonomy.taxonomy_gateway.class%">
+            <argument type="service" id="vespolina.molino" />
+            <argument>%vespolina_taxonomy.entity.taxonomy_node.class%</argument>
         </service>
-        <service id="vespolina.taxonomy_manager" alias="vespolina.taxonomy.taxonomy_manager" />
+
+        <service id="vespolina_taxonomy.taxonomy_manager" class="%vespolina_taxonomy.taxonomy_manager.class%">
+            <argument type="service" id="vespolina_taxonomy.taxonomy_gateway" />
+            <argument>%vespolina_taxonomy.entity.taxonomy_node.class%</argument>
+        </service>
+        <service id="vespolina.taxonomy_manager" alias="vespolina_taxonomy.taxonomy_manager" />
     </services>
 </container>
