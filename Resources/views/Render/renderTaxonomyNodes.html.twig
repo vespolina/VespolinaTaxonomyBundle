@@ -1,0 +1,6 @@
+<ul class="nav nav-list">
+    <li class="nav-header">Categories:</li>
+    {% for taxonomyNode in taxonomyNodes %}
+        <li><a href="#">{{ taxonomyNode.path }}</a></li>
+    {% endfor %}
+</ul>
