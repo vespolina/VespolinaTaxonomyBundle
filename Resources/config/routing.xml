@@ -3,7 +3,8 @@
         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
         xsi:schemaLocation="http://symfony.com/schema/routing http://symfony.com/schema/routing/routing-1.0.xsd">
 
-    <route id="vespolina_taxonomy_list" pattern="list">
+    <route id="vespolina_taxonomy_list" pattern="list/{routeName}/{taxonomyIdParam}">
         <default key="_controller">VespolinaTaxonomyBundle:List:list</default>
+        <default key="taxonomyIdParam">id</default>
     </route>
 </routes>

@@ -1,6 +1,6 @@
 <ul class="nav nav-list">
     <li class="nav-header">Categories:</li>
-    {% for key, taxonomyNode in taxonomyNodes %}
-        <li><a href="{{ routes[key] }}">{{ taxonomyNode.path }}</a></li>
-    {% endfor %}
+    {% include 'VespolinaTaxonomyBundle:List:list_content.html.twig'
+        with {'routes': routes, 'taxonomyNodes': taxonomyNodes}
+    %}
 </ul>
