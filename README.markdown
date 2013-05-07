@@ -23,7 +23,7 @@ myCategory:
 **Step 2: Render the sidebar in a template based on the above routing configuration**
 
 The routing parameter that defines the unique id of the taxonomy node is required and defaults to `id`. In our custom
-example it is `categoryId`. You can also pass any additional parameters that the route requires so in our custom example
+example it is `categoryId`. You can also pass any additional parameters that the route requires so in our example
 we must also pass the parameter `customSlug` so we do that as well below:
 ``` html+jinja
 {% block content_sidebar %}
