@@ -8,8 +8,7 @@ Examples of classifications include hierarchical classifications, 'tag' classifi
 
 ### Rendering the sidebar
 
-**Step 1: Import the bundle's routing ans setup a route you want the sidebar links to point to:**
-Import VespolinaTaxonomyBundle routing:
+**Step 1: Import the bundle's routing and setup a route you want the sidebar links to point to:**
 ```yaml
 # app/config/routing.yml
 vespolina_taxanomy:
@@ -26,8 +25,8 @@ myCategory:
 {% block content_sidebar %}
     {% render url('vespolina_taxonomy_list', {
         'routeName': myCategory,
-        'taxonomyIdParam': categoryId,
-        'customSlug': customSlugName
+        'taxonomyIdParam': categoryId, {# req'd. defaults to 'id' #}
+        'customSlug': customSlugName   {# add any custom routing parameters you desire #}
     }) %}
 {% endblock content_sidebar %}
 ```
