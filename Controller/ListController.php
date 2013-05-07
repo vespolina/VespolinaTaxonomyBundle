@@ -1,14 +1,14 @@
 <?php
 
-namespace Vespolina\TaxonomyBundle;
+namespace Vespolina\TaxonomyBundle\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Vespolina\Entity\Taxonomy\TaxonomyNode;
 
-class RenderController extends Controller
+class ListController extends Controller
 {
 
-    public function renderTaxonomyNodesAction(array $taxonomyNodes, $routePattern = null)
+    public function listAction($taxonomyNodes, $routeName, array $routeParams = null)
     {
         foreach ($taxonomyNodes as $taxonomyNode) {
             /** @var $taxonomyNode TaxonomyNode */
@@ -19,5 +19,10 @@ class RenderController extends Controller
             'taxonomyNodes' => $taxonomyNodes,
 
         ));
+    }
+
+    protected function createRoute()
+    {
+
     }
 }
