@@ -21,12 +21,16 @@ myCategory:
 ```
 
 **Step 2: Render the sidebar in a template based on the above routing configuration**
+
+The routing parameter that defines the unique id of the taxonomy node is required and defaults tp `id`. In our custom
+example it is `categoryId`. You can also pass any additional parameters that the route requires in our custom example
+we must also pass the parameter `customSlug` so we also pass it below:
 ``` html+jinja
 {% block content_sidebar %}
     {% render url('vespolina_taxonomy_list', {
         'routeName': myCategory,
-        'taxonomyIdParam': categoryId, {# req'd. defaults to 'id' #}
-        'customSlug': customSlugName   {# add any custom routing parameters you desire #}
+        'taxonomyIdParam': categoryId,
+        'customSlug': customSlugName
     }) %}
 {% endblock content_sidebar %}
 ```
