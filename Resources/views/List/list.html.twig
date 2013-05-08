@@ -1,0 +1,6 @@
+<ul class="nav nav-list">
+    <li class="nav-header">Categories:</li>
+    {% include 'VespolinaTaxonomyBundle:List:list_content.html.twig'
+        with {'routes': routes, 'taxonomyNodes': taxonomyNodes}
+    %}
+</ul>
